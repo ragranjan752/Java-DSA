@@ -6,6 +6,8 @@ My practice repository for Data Structures and Algorithms using Java.
 ## Topics Covered
 
 - Arrays
+- Binary Tree
+- Binary Search Tree
 - Linked List
 - Doubly Linked List
 - Stack
