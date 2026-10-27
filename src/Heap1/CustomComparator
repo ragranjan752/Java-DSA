@@ -1,0 +1,35 @@
+package Heap1;
+
+import java.util.Arrays;
+
+class Student implements Comparable<Student> {
+    String name;
+    int rno;
+    double cgpa;
+
+    Student(String name, int rno, double cgpa) {
+        this.name = name;
+        this.rno = rno;
+        this.cgpa = cgpa;
+    }
+
+    public int compareTo(Student s) {
+        return Double.compare(this.rno, s.rno);
+    }
+}
+
+public class CustomComparator {
+    static void main(String[] args) {
+        Student s1 = new Student("Rag", 31, 8.04);
+        Student s2 = new Student("shubham", 17, 8.3);
+        Student s3 = new Student("Ranjan", 32, 8.3);
+        Student s4 = new Student("Isha", 8, 8.5);
+        Student s5 = new Student("Aditya", 3, 9.7);
+        Student[] arr = {s1, s2, s3, s4, s5};
+        Arrays.sort(arr);
+        for (Student s : arr) {
+            System.out.println(s.name + " " + s.rno + " " + s.cgpa + " ");
+        }
+        System.out.println();
+    }
+}
