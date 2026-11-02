@@ -1,40 +1,37 @@
+
 package Maps_And_Sets;
 
-import java.util.HashSet;
-
 public class Main {
-    static void main(String[] args) {
-        HashSet<Integer> set = new HashSet<>();
-        set.add(77);
-        set.add(65);
-        set.add(21);
-        set.add(2);
-        set.add(11);
-        set.add(45);
-        set.add(3);
-        set.add(77);
-        // Convert HashSet into int array
-        int[] arr = new int[set.size()];
+    public static void main(String[] args) {
 
-        int i = 0;
-        for (int ele : set) {
-            arr[i++] = ele;
-        }
+        // Count distinct elements
+        FindDistinctElement obj = new FindDistinctElement();
+        int[] arr = {1, 2, 2, 3, 4, 4, 5};
+        System.out.println(obj.countDistinct(arr));
 
-        // Call TwoSum class method
-        TwoSum obj = new TwoSum();
+        // Check unique occurrences
+        System.out.println(UniqueOccurence.uniqueOccurrences(arr));
 
-        System.out.println(obj.twoSum(arr, 80));
+        // Two Sum
+        System.out.println(TwoSum.twoSum(arr, 9));
 
-        // Missing Range
-        MissingRange obj2 = new MissingRange();
+        // Count pairs with difference K
+        System.out.println(PairsWithDiffK.countPairs(arr, 3));
 
-        int[] nums = {1, 3, 5, 7};
+        // Find missing elements in a given range
+        System.out.println(MissingElementInRange.missingRange(arr, 3, 10));
 
-        System.out.println(obj2.missingRange(nums, 1, 10));
+        // Find most frequent character
+        String s = "ragranjan";
+        System.out.println(MostFrequentChar.getMaxOccuringChar(s));
 
-        FindMissingElement obj3 = new FindMissingElement();
+        // Check whether array b is a subset of array a
+        int[] a = {11, 7, 1, 13, 21, 3, 7, 3};
+        int[] b = {11, 3, 7, 1, 7};
+        System.out.println(ArraySubset.isSubset(a, b));
 
-        System.out.println(obj3.missingNumber(nums));
+        // Check whether String s1 and S2 Anagram
+        String s1= "latent", s2 = "talent";
+        System.out.println(ValidAnagram.areAnagrams(s1,s2));
     }
 }
