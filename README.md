@@ -17,6 +17,7 @@ My practice repository for Data Structures and Algorithms using Java.
 - Recursion
 - Sorting Algorithms
 - Searching Algorithms
+- Maps and Sets
 
 ## Language
 
