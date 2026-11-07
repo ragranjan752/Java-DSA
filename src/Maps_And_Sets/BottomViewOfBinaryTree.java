@@ -1,0 +1,31 @@
+package Maps_And_Sets;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
+
+
+public class BottomViewOfBinaryTree {
+    public static ArrayList<Integer> bottomView(Node root) {
+        ArrayList<Integer> ans = new ArrayList<>();
+        HashMap<Integer, Integer> map = new HashMap<>();
+        Queue<Pair> q = new LinkedList<>();
+        q.add(new Pair(root, 0));
+        int minDist = Integer.MAX_VALUE, maxDist = Integer.MIN_VALUE;
+        while (!q.isEmpty()) {
+            Pair front = q.remove();
+            Node node = front.node;
+            int dist = front.dist;
+            minDist = Math.min(dist, minDist);
+            maxDist = Math.max(dist, maxDist);
+            map.put(dist,node.data);
+            if (node.left != null) q.add(new Pair(node.left, dist - 1));
+            if (node.right != null) q.add(new Pair(node.right, dist + 1));
+        }
+        for (int i = minDist; i <= maxDist; i++) {
+            ans.add(map.get(i));
+        }
+        return ans;
+    }
+}
